@@ -1,0 +1,902 @@
+<!-- FUENTES Y ESTILOS INTEGRADOS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* VARIABLES Y CONFIGURACIÓN BASE */
+:root {
+    --verde-logo: #005a36;
+    --naranja-logo: #e06e28;
+    --crema-fondo: #fbf8f3;
+    --tarjeta-bg: #ffffff;
+    --texto-oscuro: #232323;
+    --texto-secundario: #6e7278;
+    --borde-suave: #e8e2d8;
+    --naranja-boton: #e87a5d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--crema-fondo);
+    color: var(--texto-oscuro);
+    padding: 24px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ENCABEZADO Y MARCA */
+.top-subheading {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--naranja-logo);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.brand-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-header .sub-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 6px;
+    color: #4a4a4a;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.brand-header .main-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--verde-logo);
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.05;
+    margin: 4px 0;
+    text-transform: uppercase;
+}
+
+.brand-header .main-title span {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.brand-header .location-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    letter-spacing: 10px;
+    color: #555555;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.brand-header .subtitle {
+    color: var(--naranja-logo);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.header-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--naranja-logo);
+    text-align: right;
+    max-width: 270px;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+/* MENÚ NAVEGACIÓN DE PESTAÑAS */
+.nav-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--borde-suave);
+    padding-bottom: 2px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-secundario);
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    color: var(--verde-logo);
+    border-bottom: 3px solid var(--verde-logo);
+    background-color: #ffffff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* BANNER PRINCIPAL */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    border-radius: 18px;
+    overflow: hidden;
+    background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/d4/4c/14/estancia-altos-de-vera.jpg?w=900&h=500&s=1');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.hero-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-tag {
+    background-color: rgba(0, 90, 54, 0.88);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.location-tag:hover {
+    background-color: rgba(0, 90, 54, 1);
+}
+
+.btn-upload-photo {
+    background-color: rgba(255, 255, 255, 0.92);
+    color: var(--texto-oscuro);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-upload-photo:hover {
+    background-color: #ffffff;
+}
+
+.hero-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.hero-text {
+    color: #ffffff;
+    max-width: 480px;
+}
+
+.hero-text .brand-tag {
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #f7a072;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.hero-text p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-start-survey {
+    background-color: var(--naranja-boton);
+    color: #ffffff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-start-survey:hover {
+    background-color: #d26145;
+    transform: translateY(-2px);
+}
+
+.btn-share-code {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--texto-oscuro);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* BANNER SECUNDARIO */
+.secondary-banner {
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #ffffff;
+    border: 1px solid var(--borde-suave);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.secondary-banner img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.secondary-banner-caption {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+    color: var(--texto-secundario);
+    font-style: italic;
+    background-color: #fcfbfa;
+}
+
+/* MODAL DE CÓDIGO GENERADO */
+.code-modal {
+    display: none;
+    background: #ffffff;
+    border: 2px solid var(--verde-logo);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.code-box {
+    background: #f0f7f3;
+    color: var(--verde-logo);
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    word-break: break-all;
+}
+
+/* TARJETA DE ENCUESTA Y PREGUNTAS */
+.survey-card, .dashboard-card {
+    background-color: var(--tarjeta-bg);
+    border: 1px solid var(--borde-suave);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.info-box {
+    background-color: rgba(251, 248, 243, 0.8);
+    border: 1px dashed #ded6c8;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 35px;
+}
+
+.info-box-title {
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    color: var(--naranja-logo);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    margin-bottom: 6px;
+}
+
+.form-group input, 
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--borde-suave);
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    color: var(--texto-oscuro);
+    outline: none;
+    font-family: inherit;
+}
+
+.question-block {
+    margin-bottom: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #f0eae1;
+}
+
+.question-block:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.question-number {
+    background-color: var(--verde-logo);
+    color: #ffffff;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.question-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--verde-logo);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.question-subtitle {
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    margin-top: 4px;
+}
+
+.options-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.options-grid-nps {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.option-card {
+    border: 1px solid var(--borde-suave);
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.option-card:hover {
+    border-color: var(--verde-logo);
+    background-color: #f5f9f7;
+}
+
+.option-card.selected {
+    border-color: var(--verde-logo);
+    background-color: #e8f3ee;
+    box-shadow: 0 0 0 1px var(--verde-logo);
+}
+
+.option-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.option-card .label {
+    font-size: 0.8rem;
+    color: var(--texto-oscuro);
+    font-weight: 500;
+}
+
+.option-card .number-val {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--verde-logo);
+    margin-bottom: 4px;
+}
+
+.action-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.btn-continue {
+    background-color: var(--verde-logo);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-continue:hover {
+    background-color: #004328;
+}
+
+/* ESTILOS DEL TABLERO Y TABLA */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background-color: var(--crema-fondo);
+    border: 1px solid var(--borde-suave);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--verde-logo);
+}
+
+.kpi-label {
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.admin-table-container {
+    margin-top: 30px;
+    border-top: 1px solid #f0eae1;
+    padding-top: 25px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.85rem;
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid var(--borde-suave);
+    padding: 10px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: var(--crema-fondo);
+    color: var(--verde-logo);
+    font-weight: 700;
+}
+</style>
+
+<!-- ESTRUCTURA DEL DOCUMENTO -->
+<div class="container">
+    <div class="top-subheading">SANARE · ESTADO LARA / VENEZUELA / SISTEMA DE CALIDAD TURÍSTICA</div>
+
+    <div class="header-main">
+        <div class="brand-header">
+            <span class="sub-brand">ESTANCIA</span>
+            <h1 class="main-title">ALTOS <span>DE</span> VERACRUZ</h1>
+            <span class="location-brand">S A N A R E</span>
+            <div class="subtitle">Sistema de satisfacción del cliente</div>
+        </div>
+        <div class="header-quote">
+            «Altos de Veracruz es una excelente opción como estancia para descansar y disfrutar»
+        </div>
+    </div>
+
+    <!-- PESTAÑAS DE NAVEGACIÓN -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('encuesta', this)">📝 Encuesta de Cliente</button>
+        <button class="tab-btn" onclick="switchTab('tablero', this)">📊 Tablero de Resultados</button>
+    </div>
+
+    <!-- MODAL DE ENLACE GENERADO -->
+    <div id="code-modal" class="code-modal">
+        <h3>¡Enlace de Encuesta Generado!</h3>
+        <p style="font-size: 0.85rem; color: #666;">Comparte este enlace directo con tus huéspedes:</p>
+        <div id="code-display" class="code-box">https://germaurymendoza3-art.github.io/estancia-altos-de-veracruz/#seccion-encuesta</div>
+        <button class="btn-continue" onclick="copyCode()">Copiar Enlace al Portapapeles</button>
+    </div>
+
+    <!-- PESTAÑA 1: ENCUESTA DE SATISFACCIÓN -->
+    <div id="encuesta" class="tab-content active">
+        <div class="hero-banner" id="hero-banner">
+            <div class="hero-overlay">
+                <div class="hero-top-bar">
+                    <a href="https://www.google.com/maps/place/ESTANCIA+ALTOS+DE+VERACRUZ/@9.7269075,-69.6552944,17z" target="_blank" class="location-tag">
+                        📍 Sanare · Edo. Lara (Google Maps)
+                    </a>
+                    <button class="btn-upload-photo" onclick="changeHeroImage()">📷 Cargar foto</button>
+                </div>
+                <div class="hero-bottom-bar">
+                    <div class="hero-text">
+                        <div class="brand-tag">ESTANCIA ALTOS DE VERACRUZ</div>
+                        <p>Un refugio diseñado para el reposo del alma, donde cada rincón en piedra y madera honra la calidez de Sanare.</p>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn-start-survey" onclick="document.getElementById('seccion-encuesta').scrollIntoView({behavior: 'smooth'})">
+                            Comenzar Encuesta →
+                        </button>
+                        <button class="btn-share-code" onclick="generateShareCode()">
+                            <span>📱</span> Código para Compartir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="secondary-banner">
+            <img id="secondary-img" src="https://paxer.com/static/production/HOI/2/288/13020/hash-5vww4xsoSg-paxer.jpg" alt="Vista Panorámica Estancia Altos de Veracruz">
+            <div class="secondary-banner-caption">
+                Vista panorámica de nuestras instalaciones y entorno natural en Sanare.
+            </div>
+        </div>
+
+        <form class="survey-card" id="seccion-encuesta" onsubmit="submitSurvey(event)">
+            <div class="info-box">
+                <div class="info-box-title">INFORMACIÓN DE LA ESTANCIA (OPCIONAL)</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre o Familia</label>
+                        <input type="text" id="guest-name" placeholder="Ej. Familia Rodríguez">
+                    </div>
+                    <div class="form-group">
+                        <label>Motivo de Estancia</label>
+                        <select id="guest-reason">
+                            <option>Descanso y relax</option>
+                            <option>Turismo / Vacaciones</option>
+                            <option>Trabajo / Evento</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Habitación o Área</label>
+                        <input type="text" id="guest-room" value="Suite Mirador">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 1: CSAT -->
+            <div class="question-block" id="q1-block">
+                <div class="question-header">
+                    <div class="question-number">1</div>
+                    <div>
+                        <div class="question-title">SATISFACCIÓN GLOBAL (CSAT)</div>
+                        <div class="question-subtitle">¿Qué tan satisfecho estás con nuestra estancia?</div>
+                    </div>
+                </div>
+                <div class="options-grid-5">
+                    <div class="option-card" data-val="5" onclick="selectOption(this)"><span class="icon">😊</span><div class="label">Muy satisfecho</div></div>
+                    <div class="option-card" data-val="4" onclick="selectOption(this)"><span class="icon">🙂</span><div class="label">Satisfecho</div></div>
+                    <div class="option-card" data-val="3" onclick="selectOption(this)"><span class="icon">😐</span><div class="label">Neutral</div></div>
+                    <div class="option-card" data-val="2" onclick="selectOption(this)"><span class="icon">🙁</span><div class="label">Insatisfecho</div></div>
+                    <div class="option-card" data-val="1" onclick="selectOption(this)"><span class="icon">😞</span><div class="label">Muy insatisfecho</div></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 2: SERVQUAL -->
+            <div class="question-block" id="q2-block">
+                <div class="question-header">
+                    <div class="question-number">2</div>
+                    <div>
+                        <div class="question-title">EXPECTATIVA VS REALIDAD (BRECHA SERVQUAL)</div>
+                        <div class="question-subtitle">¿Cómo calificarías el cumplimiento de lo que prometimos vs lo que recibiste?</div>
+                    </div>
+                </div>
+                <div class="options-grid-5">
+                    <div class="option-card" data-val="1" onclick="selectOption(this)"><div class="number-val">1</div><div class="label">Mucho peor</div></div>
+                    <div class="option-card" data-val="2" onclick="selectOption(this)"><div class="number-val">2</div><div class="label">Inferior</div></div>
+                    <div class="option-card" data-val="3" onclick="selectOption(this)"><div class="number-val">3</div><div class="label">Igual a lo esperado</div></div>
+                    <div class="option-card" data-val="4" onclick="selectOption(this)"><div class="number-val">4</div><div class="label">Mejor</div></div>
+                    <div class="option-card" data-val="5" onclick="selectOption(this)"><div class="number-val">5</div><div class="label">Mucho mejor</div></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 3: NPS -->
+            <div class="question-block" id="q6-block">
+                <div class="question-header">
+                    <div class="question-number">3</div>
+                    <div>
+                        <div class="question-title">RECOMENDACIÓN (NPS)</div>
+                        <div class="question-subtitle">Del 0 al 10, ¿qué tan probable es que nos recomiendes?</div>
+                    </div>
+                </div>
+                <div class="options-grid-nps">
+                    <div class="option-card" data-val="0" onclick="selectOption(this)"><div class="number-val">0</div></div>
+                    <div class="option-card" data-val="1" onclick="selectOption(this)"><div class="number-val">1</div></div>
+                    <div class="option-card" data-val="2" onclick="selectOption(this)"><div class="number-val">2</div></div>
+                    <div class="option-card" data-val="3" onclick="selectOption(this)"><div class="number-val">3</div></div>
+                    <div class="option-card" data-val="4" onclick="selectOption(this)"><div class="number-val">4</div></div>
+                    <div class="option-card" data-val="5" onclick="selectOption(this)"><div class="number-val">5</div></div>
+                    <div class="option-card" data-val="6" onclick="selectOption(this)"><div class="number-val">6</div></div>
+                    <div class="option-card" data-val="7" onclick="selectOption(this)"><div class="number-val">7</div></div>
+                    <div class="option-card" data-val="8" onclick="selectOption(this)"><div class="number-val">8</div></div>
+                    <div class="option-card" data-val="9" onclick="selectOption(this)"><div class="number-val">9</div></div>
+                    <div class="option-card" data-val="10" onclick="selectOption(this)"><div class="number-val">10</div></div>
+                </div>
+            </div>
+
+            <!-- PREGUNTA 4: MEJORA CLAVE -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">4</div>
+                    <div>
+                        <div class="question-title">SUGERENCIA O MEJORA (OPCIONAL)</div>
+                        <div class="question-subtitle">¿Qué cosa mejorarías para tus próximas visitas?</div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <textarea id="guest-feedback" rows="3" placeholder="Escribe aquí tu sugerencia o comentario breve..."></textarea>
+                </div>
+            </div>
+
+            <div class="action-container">
+                <button type="submit" class="btn-continue">Enviar Encuesta →</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- PESTAÑA 2: TABLERO DE RESULTADOS -->
+    <div id="tablero" class="tab-content">
+        <div class="dashboard-card">
+            <h2 style="color: var(--verde-logo); font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 20px;">Tablero de Calidad e Indicadores</h2>
+            
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value" id="kpi-csat">0%</div>
+                    <div class="kpi-label">Índice CSAT (Satisfacción)</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value" id="kpi-servqual">+0.0</div>
+                    <div class="kpi-label">Brecha SERVQUAL</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value" id="kpi-total">0</div>
+                    <div class="kpi-label">Encuestas Recibidas</div>
+                </div>
+            </div>
+
+            <div class="admin-table-container">
+                <h3 style="color: var(--verde-logo); font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 10px;">
+                    📋 Registro de Encuestas Recibidas
+                </h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Huésped/Familia</th>
+                            <th>Habitación</th>
+                            <th>CSAT</th>
+                            <th>SERVQUAL</th>
+                            <th>NPS</th>
+                            <th>Sugerencia de Mejora</th>
+                        </tr>
+                    </thead>
+                    <tbody id="responses-table-body">
+                        <!-- Las respuestas se cargarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LÓGICA Y SCRIPT DE INTERACCIÓN -->
+<script>
+    // URL DE GOOGLE APPS SCRIPT ACTUALIZADA
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRpDlp_RuAs56mwmMpEskDXb9lvNhz71xSwy-6oLs-WyHgIUWx9M_wj0EVhi2rsIsK/exec';
+
+    // FOTOS DE LA POSADA PARA EL BANNER
+    const posadaImages = [
+        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/d4/4c/14/estancia-altos-de-vera.jpg?w=900&h=500&s=1',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszrsSIXKmKwaptG3o0JGA9sXE_LQSPvZ319Ku6_6QFV95CYZHAM5UBiI&s=10',
+        'https://paxer.com/static/production/HOI/2/288/13022/hash-U0jN9Ec8pV-paxer.jpg',
+        'https://media-cdn.tripadvisor.com/media/photo-s/13/11/4e/94/estancia-altos-de-vera.jpg'
+    ];
+    let currentImageIndex = 0;
+
+    function changeHeroImage() {
+        currentImageIndex = (currentImageIndex + 1) % posadaImages.length;
+        document.getElementById('hero-banner').style.backgroundImage = `url('${posadaImages[currentImageIndex]}')`;
+    }
+
+    // BASE DE DATOS LOCAL
+    let surveyResponses = [];
+
+    // CAMBIO DE PESTAÑAS (ENCUESTA / TABLERO)
+    function switchTab(tabId, element) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        element.classList.add('active');
+    }
+
+    // SELECCIÓN DE TARJETAS DE OPCIONES
+    function selectOption(element) {
+        const parent = element.parentElement;
+        parent.querySelectorAll('.option-card').forEach(opt => opt.classList.remove('selected'));
+        element.classList.add('selected');
+    }
+
+    // GENERAR Y COPIAR CÓDIGO
+    function generateShareCode() {
+        const randomNum = Math.floor(1000 + Math.random() * 9000);
+        const baseUrl = window.location.href.split('#')[0];
+        const shareUrl = `${baseUrl}?code=VERACRUZ-${randomNum}#seccion-encuesta`;
+        
+        document.getElementById('code-display').innerText = shareUrl;
+        const modal = document.getElementById('code-modal');
+        modal.style.display = 'block';
+        modal.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copyCode() {
+        const codeText = document.getElementById('code-display').innerText;
+        navigator.clipboard.writeText(codeText);
+        alert('¡Enlace copiado al portapapeles!\n\nAl compartirlo con los huéspedes, los llevará directamente a responder la encuesta.');
+    }
+
+    // ENVÍO DE LA ENCUESTA
+    function submitSurvey(event) {
+        event.preventDefault();
+
+        // Obtener valores seleccionados de las tarjetas
+        const q1 = document.querySelector('#q1-block .option-card.selected')?.getAttribute('data-val');
+        const q2 = document.querySelector('#q2-block .option-card.selected')?.getAttribute('data-val');
+        const q6 = document.querySelector('#q6-block .option-card.selected')?.getAttribute('data-val');
+
+        if (!q1 || !q2 || !q6) {
+            alert('Por favor, selecciona una opción en las preguntas de calificación antes de enviar.');
+            return;
+        }
+
+        const payload = {
+            name: document.getElementById('guest-name').value || 'Anónimo',
+            room: document.getElementById('guest-room').value || 'General',
+            csat: parseInt(q1),
+            servqual: parseInt(q2),
+            nps: parseInt(q6),
+            feedback: document.getElementById('guest-feedback').value || 'Sin comentarios'
+        };
+
+        // 1. Guardar la respuesta en el arreglo local
+        surveyResponses.push(payload);
+
+        // 2. Actualizar inmediatamente los contadores y la tabla del Tablero
+        updateDashboard(payload);
+
+        // 3. Enviar a Google Sheets vía la URL de Apps Script
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(() => {
+            alert('¡Gracias! Tu encuesta se ha guardado y enviado con éxito.');
+            document.getElementById('seccion-encuesta').reset();
+            document.querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+        })
+        .catch(err => {
+            console.error('Error al enviar:', err);
+            alert('Respuesta registrada en el tablero local.');
+        });
+    }
+
+    // ACTUALIZACIÓN DINÁMICA DEL TABLERO DE RESULTADOS
+    function updateDashboard(lastData) {
+        const total = surveyResponses.length;
+
+        // Actualiza el número de encuestas recibidas
+        document.getElementById('kpi-total').innerText = total;
+
+        if (total === 0) return;
+
+        // Calcula porcentajes y promedios
+        const sumCSAT = surveyResponses.reduce((acc, r) => acc + r.csat, 0);
+        const sumSERVQUAL = surveyResponses.reduce((acc, r) => acc + r.servqual, 0);
+
+        const csatPct = Math.round((sumCSAT / (total * 5)) * 100);
+        const servqualAvg = (sumSERVQUAL / total).toFixed(1);
+
+        document.getElementById('kpi-csat').innerText = `${csatPct}%`;
+        document.getElementById('kpi-servqual').innerText = `+${servqualAvg}`;
+
+        // Agrega la nueva fila a la tabla del Tablero
+        const tbody = document.getElementById('responses-table-body');
+        if (tbody && lastData) {
+            const row = `<tr>
+                <td>${lastData.name}</td>
+                <td>${lastData.room}</td>
+                <td>${lastData.csat} / 5</td>
+                <td>${lastData.servqual} / 5</td>
+                <td>${lastData.nps} / 10</td>
+                <td>${lastData.feedback}</td>
+            </tr>`;
+            tbody.insertAdjacentHTML('afterbegin', row);
+        }
+    }
+</script>
